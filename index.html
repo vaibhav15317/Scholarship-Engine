@@ -1,0 +1,230 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Smart Scholarship Engine — Free desktop app</title>
+  <meta name="description" content="Download Smart Scholarship Engine, a free Windows desktop app that matches your student profile to scholarships, with deadlines and links to official portals.">
+  <meta property="og:title" content="Smart Scholarship Engine — Free desktop app">
+  <meta property="og:description" content="Download Smart Scholarship Engine, a free Windows desktop app that matches your student profile to scholarships, with deadlines and links to official portals.">
+  <meta property="og:type" content="website">
+  <meta name="twitter:card" content="summary_large_image">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body id="top">
+
+  <header class="site-header">
+    <div class="container header-inner">
+      <a class="brand" href="#top">
+        <span class="brand-mark" aria-hidden="true">S</span>
+        Smart Scholarship Engine
+      </a>
+      <button class="nav-toggle" aria-label="Toggle menu" aria-expanded="false" aria-controls="nav">☰</button>
+      <nav id="nav" class="nav">
+        <a href="#features">Features</a>
+        <a href="#preview">Try it</a>
+        <a href="#install">Install</a>
+        <a href="#download" class="nav-cta">Download</a>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <!-- Hero -->
+    <section class="hero">
+      <div class="container hero-inner">
+        <p class="eyebrow">Free desktop app for students</p>
+        <h1>Find the scholarships you qualify for.</h1>
+        <p class="lead">
+          Smart Scholarship Engine runs on your own computer. Fill in your profile once, and it lists the
+          schemes that fit, with the documents you need and links to the official portals.
+        </p>
+        <div class="hero-actions">
+          <a class="btn btn-primary" href="https://program-download-website.netlify.app/downloads/SmartScholarshipEngine.zip" download>Download for Windows</a>
+          <a class="btn btn-ghost" href="#preview">Try the matcher first</a>
+        </div>
+        <ul class="badges">
+          <li><strong>Free</strong><span>no sign-up needed</span></li>
+          <li><strong>Offline</strong><span>your profile stays on your PC</span></li>
+          <li><strong>9 KB</strong><span>small download</span></li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- Download -->
+    <section class="section section-alt" id="download">
+      <div class="container narrow">
+        <p class="eyebrow">Smart Scholarship Engine</p>
+        <h2>Get the program</h2>
+        <p class="section-sub">One zip with the app and a launcher. For Windows 10 or 11 with Python 3.10 or newer.</p>
+
+        <a class="btn btn-primary btn-lg" href="https://program-download-website.netlify.app/downloads/SmartScholarshipEngine.zip" download>Download SmartScholarshipEngine.zip</a>
+
+        <details class="files">
+          <summary>Or download the files one at a time</summary>
+          <ul>
+            <li>
+              <a href="https://program-download-website.netlify.app/downloads/Run_Smart_Scholarship_Engine.bat" download>Run_Smart_Scholarship_Engine.bat</a>
+              <span>One-click launcher for Windows</span>
+            </li>
+            <li>
+              <a href="https://program-download-website.netlify.app/downloads/smart_scholarship_engine.py" download>smart_scholarship_engine.py</a>
+              <span>The app itself (Python + PySide6)</span>
+            </li>
+            <li>
+              <a href="https://program-download-website.netlify.app/downloads/requirements.txt" download>requirements.txt</a>
+              <span>Dependency list used by the launcher</span>
+            </li>
+          </ul>
+        </details>
+
+        <p class="note">Don't have Python? <a href="https://www.python.org/downloads/" target="_blank" rel="noopener">Get it from python.org</a> and tick “Add Python to PATH” when you install it.</p>
+      </div>
+    </section>
+
+    <!-- Features -->
+    <section class="section" id="features">
+      <div class="container">
+        <h2 class="center">What's in the app</h2>
+        <div class="feature-grid">
+          <article class="card">
+            <p class="card-label">Student profile</p>
+            <h3>Describe yourself once</h3>
+            <p>Education level, category, state, family income, achievements and the documents you already have.</p>
+          </article>
+          <article class="card">
+            <p class="card-label">Scholarship explorer</p>
+            <h3>Search and filter schemes</h3>
+            <p>Browse a starter list of Karnataka and central schemes, ranked by how well they match your profile.</p>
+          </article>
+          <article class="card">
+            <p class="card-label">My shortlist</p>
+            <h3>Save what looks promising</h3>
+            <p>Keep good options in one place while you check eligibility and application dates.</p>
+          </article>
+          <article class="card">
+            <p class="card-label">Official portals</p>
+            <h3>Go straight to the source</h3>
+            <p>Each scheme links to Karnataka SSP, the National Scholarship Portal or AICTE, so you can confirm the rules and apply.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- Live preview -->
+    <section class="section section-alt" id="preview">
+      <div class="container">
+        <p class="eyebrow center">Live preview</p>
+        <h2 class="center">See how matching works</h2>
+        <p class="section-sub center">A small browser version of the matcher, using example schemes. The desktop app has the full profile and catalogue.</p>
+
+        <div class="preview-grid">
+          <form class="panel" id="matcher-form" novalidate>
+            <h3>Your profile</h3>
+
+            <label for="course">Course <span class="req">*</span></label>
+            <select id="course" required>
+              <option>Engineering</option>
+              <option>Medicine</option>
+              <option>Science</option>
+              <option>Commerce</option>
+              <option>Arts</option>
+            </select>
+
+            <label for="category">Category <span class="req">*</span></label>
+            <select id="category" required>
+              <option>General</option>
+              <option>OBC</option>
+              <option>SC</option>
+              <option>ST</option>
+              <option>EWS</option>
+            </select>
+
+            <label for="marks">Marks (%)</label>
+            <input id="marks" type="number" min="0" max="100" step="0.1" value="80" inputmode="decimal">
+
+            <label for="income">Family income per year (₹)</label>
+            <input id="income" type="number" min="0" step="1000" value="500000" inputmode="numeric">
+
+            <label for="state">State <span class="req">*</span></label>
+            <select id="state" required>
+              <option>Karnataka</option>
+              <option>Maharashtra</option>
+              <option>Tamil Nadu</option>
+              <option>Delhi</option>
+              <option>Uttar Pradesh</option>
+              <option>Other</option>
+            </select>
+
+            <button type="submit" class="btn btn-primary btn-block">Find scholarships</button>
+          </form>
+
+          <div class="panel results-panel" aria-live="polite">
+            <h3 id="results-title">Your matches</h3>
+            <p class="muted" id="results-sub">Sorted by nearest deadline.</p>
+            <div id="results"></div>
+            <p class="disclaimer">Listings in this preview are example data to demonstrate matching. They are not real schemes.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Install -->
+    <section class="section" id="install">
+      <div class="container">
+        <h2 class="center">Install in three steps</h2>
+        <ol class="steps">
+          <li class="card">
+            <p class="card-label">Step 1</p>
+            <h3>Install Python</h3>
+            <p>Get Python 3.10 or newer from <a href="https://www.python.org/downloads/" target="_blank" rel="noopener">python.org</a>. During setup, tick “Add Python to PATH”.</p>
+          </li>
+          <li class="card">
+            <p class="card-label">Step 2</p>
+            <h3>Download and unzip</h3>
+            <p>Download <code>SmartScholarshipEngine.zip</code>, right-click it and choose “Extract All”. Keep the files together in one folder.</p>
+          </li>
+          <li class="card">
+            <p class="card-label">Step 3</p>
+            <h3>Double-click the launcher</h3>
+            <p>Open <code>Run_Smart_Scholarship_Engine.bat</code>. The first run installs PySide6 (needs internet), then the app opens.</p>
+          </li>
+        </ol>
+
+        <div class="faq">
+          <details>
+            <summary>Windows says “Windows protected your PC”</summary>
+            <p>This appears for new files downloaded from the internet. Click “More info”, then “Run anyway”. The launcher is a short text file, so you can open it in Notepad to see exactly what it does.</p>
+          </details>
+          <details>
+            <summary>Can I use it on macOS or Linux?</summary>
+            <p>Yes. Open a terminal in the unzipped folder and run <code>python3 -m pip install -r requirements.txt</code>, then <code>python3 smart_scholarship_engine.py</code>.</p>
+          </details>
+          <details>
+            <summary>Is the scholarship information official?</summary>
+            <p>The app ships with a starter list of schemes and links to their official portals. Matches are indicative, not a guarantee of eligibility, so always confirm deadlines and requirements on the portal before applying.</p>
+          </details>
+        </div>
+      </div>
+    </section>
+
+    <!-- CTA -->
+    <section class="cta">
+      <div class="container center">
+        <h2>Ready to find your funding?</h2>
+        <p>Free download · Windows · Python 3.10+</p>
+        <a class="btn btn-light btn-lg" href="https://program-download-website.netlify.app/downloads/SmartScholarshipEngine.zip" download>Download now</a>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container">
+      <p>Smart Scholarship Engine · BMSIT Innovation &amp; Design Thinking</p>
+      <p>Wasim Akram Kabir · Saarans Singh · Vaibhav Kumar Singh · Yash Kumar</p>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
